@@ -6,8 +6,8 @@ function ProjectCard(props) {
  const { projectData } = props;
  return (
     <div className="project-card">
-        <Link to="/project">
-            <img src={projectData.image}/>
+        <Link to={`/project/${projectData.id}`}>
+            <img src={projectData.image} alt=""/>
             <h3>{projectData.title}</h3>
         </Link>
     </div>
