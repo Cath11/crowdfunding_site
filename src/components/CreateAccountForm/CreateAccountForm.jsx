@@ -46,7 +46,9 @@ function CreateAccountForm() {
     e.preventDefault();
     if (credentials.username && credentials.password) {
       postData().then((response) => {
+        
         window.localStorage.setItem("token", response.token);
+        
         history.push("/");
       });
     }
