@@ -45,12 +45,15 @@ function CreateAccountForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (credentials.username && credentials.password) {
-      postData().then((response) => {
-        
-        window.localStorage.setItem("token", response.token);
-        
-        history.push("/");
-      });
+      postData()
+        .then((response) => {
+          window.localStorage.setItem("token", response.token);
+
+          history.push("/");
+        })
+        .catch((error) => {
+          alert("username taken");
+        });
     }
   };
   return (
