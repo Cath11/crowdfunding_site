@@ -25,8 +25,8 @@ function Nav() {
         <Link to="/login">Login</Link>
       )}
       <Link to="/users">Create Account</Link>
+      <Link to="/createproject">Create Project</Link>
     </nav>
   );
 }
 export default Nav;
-

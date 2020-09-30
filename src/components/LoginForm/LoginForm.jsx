@@ -27,14 +27,17 @@ function LoginForm() {
         body: JSON.stringify(credentials),
       }
     );
-    return response.json();
+    const data = await response.json();
+    window.localStorage.setItem("token", data.token);
+
+    return data;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (credentials.username && credentials.password) {
-      postData().then((response) => {
-        window.localStorage.setItem("token", response.token);
+      postData().then((data) => {
+        //window.localStorage.setItem("token", response.token);//
         history.push("/");
       });
     }

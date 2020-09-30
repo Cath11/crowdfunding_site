@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import Nav from "./components/Nav/Nav";
 import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
+import CreateProjectPage from "./pages/CreateProjectPage";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
           <Route path="/users">
             <CreateAccountPage />
           </Route>
-          <Route path="/">
+          <Route path="/createproject/">
+            <CreateProjectPage />
+          </Route>
+
+          <Route exact path="/">
             <HomePage />
           </Route>
         </Switch>
