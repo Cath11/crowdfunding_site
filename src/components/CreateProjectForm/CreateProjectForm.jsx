@@ -67,7 +67,7 @@ function CreateProject() {
         />
       </div>
       <div>
-        <label htmlFor="description">Email:</label>
+        <label htmlFor="description">Description:</label>
         <input
           type="text"
           id="description"
