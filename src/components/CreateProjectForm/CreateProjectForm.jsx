@@ -45,7 +45,7 @@ function CreateProject() {
     ) {
       postData()
         .then((response) => {
-          window.localStorage.setItem("token", response.token);
+          // window.localStorage.setItem("token", response.token);
 
           history.push("/");
         })
