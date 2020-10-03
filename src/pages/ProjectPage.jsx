@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
-
+import { useParams, useHistory, Link } from "react-router-dom";
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { id } = useParams();
-  const history = useHistory();
-
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
       .then((results) => {
@@ -14,14 +11,12 @@ function ProjectPage() {
       .then((data) => {
         setProjectData(data);
       });
-  }, [id]);
-
+  }, []);
   const token = window.localStorage.getItem("token");
-
+  const history = useHistory();
   const deleteData = async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}projects/${id}`,
-
       {
         method: "delete",
         headers: {
@@ -32,7 +27,6 @@ function ProjectPage() {
     );
     history.push("/");
   };
-
   return (
     <div>
       <h2>{projectData.title}</h2>
@@ -56,6 +50,7 @@ function ProjectPage() {
       <button type="submit" onClick={deleteData}>
         Delete Project
       </button>
+      <Link to={`/project/${projectData.id}`}>Edit Project</Link>
     </div>
   );
 }

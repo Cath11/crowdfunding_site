@@ -26,7 +26,7 @@ function Nav() {
       )}
       <Link to="/users">Create Account</Link>
       <Link to="/createproject">Create Project</Link>
-      <Link to="/editproject">Edit Project</Link>
+   
     </nav>
   );
 }

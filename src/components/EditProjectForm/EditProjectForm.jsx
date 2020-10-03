@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-
-function EditProject() {
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
+function EditProjectForm() {
+  const [projectData, setProjectData] = useState({ pledges: [] });
+  const { id } = useParams();
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
+      .then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setProjectData(data);
+      });
+  }, []);
   const [credentials, setCredentials] = useState({
     title: "",
-    description: "Super Duper",
-    goal: "250",
+    description: "test descriptio",
+    goal: 150,
     image: "http://lorempixel.com/400/400/nightlife",
-    is_open: "true",
-    date_created: "2020-09-09T20:31:00Z",
+    is_open: true,
+    date_created: "2020-09-04T11:33:37Z",
   });
   const history = useHistory();
   const token = window.localStorage.getItem("token");
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setCredentials((prevCredentials) => ({
@@ -20,7 +29,6 @@ function EditProject() {
       [id]: value,
     }));
   };
-
   const putData = async () => {
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}projects/${id}`,
@@ -35,19 +43,16 @@ function EditProject() {
     );
     return response.json();
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (true) {
       putData()
         .then((response) => {
           // window.localStorage.setItem("token", response.token);
-
           history.push("/");
         })
         .catch((error) => {
-          alert("you loser you haven't completed the form");
+          alert("you haven't filled in all criteria");
         });
     }
   };
@@ -58,15 +63,14 @@ function EditProject() {
         <input
           type="text"
           id="title"
-          placeholder="Enter title"
+          placeholder="Enter Title"
           onChange={handleChange}
-          value={credentials.title}
         />
       </div>
       <div>
         <label htmlFor="description">Description:</label>
         <input
-          type="text"
+          type="description"
           id="description"
           placeholder="description"
           onChange={handleChange}
@@ -78,7 +82,7 @@ function EditProject() {
         <input
           type="goal"
           id="goal"
-          placeholder="goal"
+          placeholder="Goal"
           onChange={handleChange}
           value={credentials.goal}
         />
@@ -88,7 +92,7 @@ function EditProject() {
         <input
           type="image"
           id="image"
-          placeholder="image"
+          placeholder="Image"
           onChange={handleChange}
           value={credentials.image}
         />
@@ -108,17 +112,15 @@ function EditProject() {
         <input
           type="date_created"
           id="date_created"
-          placeholder="date_created"
+          placeholder="date_Created"
           onChange={handleChange}
           value={credentials.date_created}
         />
       </div>
-
       <button type="submit" onClick={handleSubmit}>
-        Create Project
+        Edit Project
       </button>
     </form>
   );
 }
-
-export default EditProject;
+export default EditProjectForm;
