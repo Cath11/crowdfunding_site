@@ -36,13 +36,7 @@ function CreateProject() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (
-      credentials.title &&
-      credentials.description &&
-      credentials.goal &&
-      credentials.is_open &&
-      credentials.date_created
-    ) {
+    if (true) {
       postData()
         .then((response) => {
           // window.localStorage.setItem("token", response.token);

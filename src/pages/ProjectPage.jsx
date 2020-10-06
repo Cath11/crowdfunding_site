@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
+import image1 from "../image1.png";
+
 function ProjectPage() {
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { id } = useParams();
@@ -25,10 +27,14 @@ function ProjectPage() {
         },
       }
     );
+
     history.push("/");
   };
   return (
     <div>
+      <img src={image1} class name="image1" />
+      <img src={image1} class name="image1" />
+      <img src={image1} class name="image1" />
       <h2>{projectData.title}</h2>
       <h2>Description: {projectData.description}</h2>
       <h3>Created at: {projectData.date_created}</h3>
@@ -50,6 +56,7 @@ function ProjectPage() {
       <button type="submit" onClick={deleteData}>
         Delete Project
       </button>
+
       <Link to={`/project/${projectData.id}`}>Edit Project</Link>
     </div>
   );

@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import EditProjectPage from "./pages/EditProjectPage";
+
 function App() {
   return (
     <Router>
@@ -23,7 +24,7 @@ function App() {
           <Route path="/users">
             <CreateAccountPage />
           </Route>
-          <Route path="/createprojects">
+          <Route path="/createproject">
             <CreateProjectPage />
           </Route>
           <Route path="/editprojects/:id">
