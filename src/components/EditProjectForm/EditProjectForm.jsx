@@ -17,7 +17,7 @@ function EditProjectForm() {
     title: "",
     description: "test description",
     goal: 150,
-    image: "http://lorempixel.com/400/400/nightlife",
+    image: "",
     is_open: true,
     date_created: "2020-09-04T11:33:37Z",
   });
