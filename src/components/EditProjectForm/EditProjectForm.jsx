@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+
 function EditProjectForm() {
   const [projectData, setProjectData] = useState({ pledges: [] });
   const { id } = useParams();
@@ -14,7 +15,7 @@ function EditProjectForm() {
   }, []);
   const [credentials, setCredentials] = useState({
     title: "",
-    description: "test descriptio",
+    description: "test description",
     goal: 150,
     image: "http://lorempixel.com/400/400/nightlife",
     is_open: true,
@@ -49,7 +50,7 @@ function EditProjectForm() {
       putData()
         .then((response) => {
           // window.localStorage.setItem("token", response.token);
-          history.push("/");
+          history.push(`/project/${id}`);
         })
         .catch((error) => {
           alert("you haven't filled in all criteria");
