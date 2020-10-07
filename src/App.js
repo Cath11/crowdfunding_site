@@ -28,7 +28,7 @@ function App() {
           <Route path="/createproject">
             <CreateProjectPage />
           </Route>
-          <Route path="/createpledge">
+          <Route path="/createpledge/:id">
             <CreatePledgePage />
           </Route>
           <Route path="/editprojects/:id">

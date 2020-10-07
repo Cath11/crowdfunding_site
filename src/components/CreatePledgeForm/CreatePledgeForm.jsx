@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function CreatePledge() {
+  const { id } = useParams();
   const [credentials, setCredentials] = useState({
     amount: "30",
     comment: "goodluck",
     annonymous: "false",
-    project: "",
+    project: id,
     supporter: "",
   });
   const history = useHistory();
@@ -79,7 +80,7 @@ function CreatePledge() {
           value={credentials.annonymous}
         />
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="project">Project:</label>
         <input
           type="project"
@@ -88,7 +89,7 @@ function CreatePledge() {
           onChange={handleChange}
           value={credentials.project}
         />
-      </div>
+      </div> */}
       <div>
         <label htmlFor="supporter">Supporter:</label>
         <input
