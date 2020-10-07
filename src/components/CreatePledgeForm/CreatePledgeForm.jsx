@@ -6,8 +6,8 @@ function CreatePledge() {
   const [credentials, setCredentials] = useState({
     amount: "30",
     comment: "goodluck",
-    annonymous: "false",
-    project: id,
+    anonymous: false,
+    project_id: id,
     supporter: "",
   });
   const history = useHistory();
@@ -53,7 +53,7 @@ function CreatePledge() {
       <div>
         <label htmlFor="amount">Amount:</label>
         <input
-          type="amount"
+          type="text"
           id="amount"
           placeholder="Enter amount"
           onChange={handleChange}
@@ -71,25 +71,25 @@ function CreatePledge() {
         />
       </div>
       <div>
-        <label htmlFor="annonymous">Annonymous:</label>
+        <label htmlFor="anonymous">Anonymous?:</label>
         <input
-          type="annonymous"
-          id="annonymous"
-          placeholder="annonymous"
+          type="anonymous"
+          id="anonymous"
+          placeholder="anonymous"
           onChange={handleChange}
-          value={credentials.annonymous}
+          value={credentials.anonymous}
         />
       </div>
-      {/* <div>
-        <label htmlFor="project">Project:</label>
+      <div>
+        <label htmlFor="project_id">Project ID:</label>
         <input
-          type="project"
-          id="project"
-          placeholder="project"
+          type="project_id"
+          id="project_id"
+          placeholder="project_id"
           onChange={handleChange}
-          value={credentials.project}
+          value={credentials.project_id}
         />
-      </div> */}
+      </div>
       <div>
         <label htmlFor="supporter">Supporter:</label>
         <input
