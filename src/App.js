@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import EditProjectPage from "./pages/EditProjectPage";
+import CreatePledgePage from "./pages/CreatePledgePage";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/createproject">
             <CreateProjectPage />
+          </Route>
+          <Route path="/createpledge">
+            <CreatePledgePage />
           </Route>
           <Route path="/editprojects/:id">
             <EditProjectPage />
