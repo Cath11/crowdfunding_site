@@ -50,7 +50,7 @@ function CreatePledge() {
   return (
     <form>
       <div>
-        <label htmlFor="amount">Title:</label>
+        <label htmlFor="amount">Amount:</label>
         <input
           type="amount"
           id="amount"
