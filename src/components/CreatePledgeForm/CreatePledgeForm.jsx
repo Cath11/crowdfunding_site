@@ -7,8 +7,8 @@ function CreatePledge() {
     amount: "30",
     comment: "goodluck",
     anonymous: false,
-    project_id: id,
     supporter: "",
+    project_id: id,
   });
   const history = useHistory();
   const token = window.localStorage.getItem("token");
@@ -22,7 +22,7 @@ function CreatePledge() {
   };
 
   const postData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/pledges`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
