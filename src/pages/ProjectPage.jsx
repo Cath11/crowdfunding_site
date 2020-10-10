@@ -58,7 +58,7 @@ function ProjectPage() {
       </button>
 
       <Link to={`/editprojects/${projectData.id}`}>Edit Project</Link>
-      <Link to={`/createpledge/${projectData.id}`}>Create Pledge</Link>
+      <Link to={`/createpledge/${projectData.id}`}>Create Pledges</Link>
     </div>
   );
 }

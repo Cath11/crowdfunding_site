@@ -5,9 +5,9 @@ function CreateProject() {
   const [credentials, setCredentials] = useState({
     title: "",
     description: "Super Duper",
-    goal: 250,
+    goal: "250",
     image: "http://lorempixel.com/400/400/nightlife",
-    is_open: true,
+    is_open: "true",
     date_created: "2020-09-09T20:31:00Z",
   });
   const history = useHistory();
