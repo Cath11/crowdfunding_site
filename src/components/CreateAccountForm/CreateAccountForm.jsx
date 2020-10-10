@@ -19,7 +19,6 @@ function CreateAccountForm() {
 
   const postData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}users/`, {
-      mode: 'no-cors',
       method: "post",
       headers: {
         "Content-Type": "application/json",
