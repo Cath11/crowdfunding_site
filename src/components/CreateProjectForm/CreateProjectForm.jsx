@@ -23,6 +23,7 @@ function CreateProject() {
 
   const postData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}projects/`, {
+      mode: 'no-cors',
       method: "post",
       headers: {
         "Content-Type": "application/json",
