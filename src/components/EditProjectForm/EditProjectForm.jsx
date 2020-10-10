@@ -17,7 +17,7 @@ function EditProjectForm() {
     title: "",
     description: "test description",
     goal: 150,
-    image: "",
+    image: "http://lorempixel.com/400/400/nightlife",
     is_open: true,
     date_created: "2020-09-04T11:33:37Z",
   });
@@ -93,7 +93,7 @@ function EditProjectForm() {
         <input
           type="image"
           id="image"
-          placeholder="Image"
+          placeholder="http://lorempixel.com/400/400/nightlife"
           onChange={handleChange}
           value={credentials.image}
         />
@@ -118,9 +118,9 @@ function EditProjectForm() {
           value={credentials.date_created}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+        <button type="submit" onClick={handleSubmit}>
         Edit Project
-      </button>
+        </button>
     </form>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./index.css";
 
 function CreateAccountForm() {
   const [credentials, setCredentials] = useState({
@@ -19,7 +20,6 @@ function CreateAccountForm() {
 
   const postData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}users/`, {
-      mode: 'no-cors',
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ function CreateAccountForm() {
   };
   return (
     <form>
-      <div>
+      <div class="form1">
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -68,7 +68,7 @@ function CreateAccountForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class= "form1">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -77,7 +77,7 @@ function CreateAccountForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class="form1">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
