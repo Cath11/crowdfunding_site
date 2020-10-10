@@ -118,9 +118,9 @@ function EditProjectForm() {
           value={credentials.date_created}
         />
       </div>
-      <button type="submit" onClick={handleSubmit}>
+        <button type="submit" onClick={handleSubmit}>
         Edit Project
-      </button>
+        </button>
     </form>
   );
 }
