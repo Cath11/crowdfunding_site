@@ -4,11 +4,11 @@ import { useHistory, useParams } from "react-router-dom";
 function CreatePledge() {
   const { id } = useParams();
   const [credentials, setCredentials] = useState({
-    amount: "30",
-    comment: "goodluck",
+    amount: 30,
+    comment: "goodluck with your research project",
     anonymous: false,
     supporter: "",
-    project_id: id,
+    project_id: id
   });
   const history = useHistory();
   const token = window.localStorage.getItem("token");
@@ -44,7 +44,7 @@ function CreatePledge() {
           history.push("/");
         })
         .catch((error) => {
-          alert("you loser you haven't completed the form");
+          alert("try again as you haven't fully completed the form");
         });
     }
   };

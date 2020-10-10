@@ -44,7 +44,7 @@ function CreateProject() {
           history.push("/");
         })
         .catch((error) => {
-          alert("you loser you haven't completed the form");
+          alert("you haven't fully completed the form");
         });
     }
   };
