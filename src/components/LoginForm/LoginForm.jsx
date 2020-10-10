@@ -20,6 +20,7 @@ function LoginForm() {
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}api-token-auth/`,
       {
+        mode: 'no-cors',
         method: "post",
         headers: {
           "Content-Type": "application/json",
