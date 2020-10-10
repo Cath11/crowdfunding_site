@@ -5,7 +5,7 @@ function CreatePledge() {
   const { id } = useParams();
   const [credentials, setCredentials] = useState({
     amount: "30",
-    comment: "goodluck",
+    comment: "good luck",
     anonymous: false,
     project_id: id,
     supporter: "",
@@ -44,7 +44,7 @@ function CreatePledge() {
           history.push("/");
         })
         .catch((error) => {
-          alert("you loser you haven't completed the form");
+          alert("oh deary me you haven't completed the form");
         });
     }
   };

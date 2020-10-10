@@ -93,7 +93,7 @@ function EditProjectForm() {
         <input
           type="image"
           id="image"
-          placeholder="http://lorempixel.com/400/400/nightlife"
+          placeholder="image"
           onChange={handleChange}
           value={credentials.image}
         />
