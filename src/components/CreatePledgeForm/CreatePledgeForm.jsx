@@ -23,7 +23,6 @@ function CreatePledge() {
 
   const postData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
-      mode: "no-cors",
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +71,7 @@ function CreatePledge() {
         />
       </div>
       <div>
-        <label htmlFor="anonymous">Anonymous?:</label>
+        <label htmlFor="anonymous">Stay Anonymous?:</label>
         <input
           type="anonymous"
           id="anonymous"
