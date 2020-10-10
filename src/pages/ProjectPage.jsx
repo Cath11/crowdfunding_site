@@ -57,12 +57,8 @@ function ProjectPage() {
         Delete Project
       </button>
 
-      <Link to={`/editprojects/${projectData.id}`}>
-        <button type="submit">Edit Project</button>
-      </Link>
-      <Link to={`/createpledge/${projectData.id}`}>
-        <button type="submit">Create Pledge</button>
-      </Link>
+      <Link to={`/editprojects/${projectData.id}`}>Edit Project</Link>
+      <Link to={`/createpledge/${projectData.id}`}>Create Pledge</Link>
     </div>
   );
 }

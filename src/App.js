@@ -25,7 +25,7 @@ function App() {
           <Route path="/users">
             <CreateAccountPage />
           </Route>
-          <Route path="/createprojects">
+          <Route path="/createproject">
             <CreateProjectPage />
           </Route>
           <Route path="/createpledge/:id">

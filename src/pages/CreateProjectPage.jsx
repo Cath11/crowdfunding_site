@@ -1,8 +1,9 @@
 import React from "react";
-import CreateProject from "../components/CreateProjectForm/CreateProjectForm";
+import CreateProjectForm from "../components/CreateProjectForm/CreateProjectForm";
+
 
 function CreateProjectPage() {
-  return <CreateProject />;
+  return <CreateProjectForm />;
 }
 
 export default CreateProjectPage;

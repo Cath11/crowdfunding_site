@@ -25,7 +25,7 @@ function Nav() {
         <Link to="/login">Login</Link>
       )}
       <Link to="/users">Create Account</Link>
-      <Link to="/createprojects">Create Project</Link>
+      <Link to="/createproject">Create Project</Link>
     </nav>
   );
 }
