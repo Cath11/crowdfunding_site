@@ -5,7 +5,7 @@ import image1 from "../image1.png";
 function HomePage() {
   const [projectList, setProjectList] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}projects/`)
+    fetch(`${process.env.REACT_APP_API_URL}projects`)
       .then((results) => {
         return results.json();
       })
@@ -21,7 +21,7 @@ function HomePage() {
       <img src={image1} class name="image1" />
 
       <div id="project-list">
-        <h3> Welcome to Fund My Research. </h3>
+        {/* <h3> Welcome to Fund My Research. </h3> */}
         {projectList.map((projectData, key) => {
           return <ProjectCard key={key} projectData={projectData} />;
         })}

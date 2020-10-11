@@ -54,12 +54,12 @@ function CreateAccountForm() {
         })
         .catch((error) => {
           alert("username taken");
-        });
+    });
     }
   };
   return (
     <form>
-      <div class="form1">
+      <div class="form1-item">
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -68,7 +68,7 @@ function CreateAccountForm() {
           onChange={handleChange}
         />
       </div>
-      <div class= "form1">
+      <div class= "form1-item">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -77,7 +77,7 @@ function CreateAccountForm() {
           onChange={handleChange}
         />
       </div>
-      <div class="form1">
+      <div class="form1-item">
         <label htmlFor="password">Password:</label>
         <input
           type="password"

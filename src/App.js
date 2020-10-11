@@ -28,11 +28,11 @@ function App() {
           <Route path="/createproject">
             <CreateProjectPage />
           </Route>
-          <Route path="/createpledge/:id">
-            <CreatePledgePage />
-          </Route>
           <Route path="/editprojects/:id">
             <EditProjectPage />
+          </Route>
+          <Route path="/createpledge/:id">
+            <CreatePledgePage />       
           </Route>
           <Route exact path="/">
             <HomePage />

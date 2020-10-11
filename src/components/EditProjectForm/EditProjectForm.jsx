@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import "./index.css";
 
 function EditProjectForm() {
   const [projectData, setProjectData] = useState({ pledges: [] });
@@ -15,7 +16,7 @@ function EditProjectForm() {
   }, []);
   const [credentials, setCredentials] = useState({
     title: "",
-    description: "test description",
+    description: "",
     goal: 150,
     image: "http://lorempixel.com/400/400/nightlife",
     is_open: true,
@@ -51,15 +52,15 @@ function EditProjectForm() {
         .then((response) => {
           // window.localStorage.setItem("token", response.token);
           history.push(`/project/${id}`);
-        })
-        .catch((error) => {
+      })
+      .catch((error) => {
           alert("you haven't filled in all criteria");
-        });
+    });
     }
   };
   return (
     <form>
-      <div>
+      <div class= "form1-item">
         <label htmlFor="title">Title:</label>
         <input
           type="text"
@@ -68,7 +69,7 @@ function EditProjectForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="description">Description:</label>
         <input
           type="description"
@@ -78,17 +79,17 @@ function EditProjectForm() {
           value={credentials.description}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="goal">Goal:</label>
         <input
           type="goal"
           id="goal"
-          placeholder="Goal"
+          placeholder="goal"
           onChange={handleChange}
           value={credentials.goal}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="image">Image:</label>
         <input
           type="image"
@@ -98,17 +99,17 @@ function EditProjectForm() {
           value={credentials.image}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="is_open">Project Open:</label>
         <input
           type="is_open"
           id="is_open"
-          placeholder="is_open"
+          placeholder="true or false"
           onChange={handleChange}
           value={credentials.is_open}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="date_created">Date Created:</label>
         <input
           type="date_created"

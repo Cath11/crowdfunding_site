@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./index.css";
+
 
 function LoginForm() {
   const [credentials, setCredentials] = useState({
@@ -28,7 +30,7 @@ function LoginForm() {
       }
     );
     const data = await response.json();
-    window.localStorage.setItem("token", data.token);
+    // window.localStorage.setItem("token", data.token);
 
     return data;
   };
@@ -37,14 +39,14 @@ function LoginForm() {
     e.preventDefault();
     if (credentials.username && credentials.password) {
       postData().then((data) => {
-        //window.localStorage.setItem("token", response.token);//
+        window.localStorage.setItem("token", data.token);
         history.push("/");
       });
     }
   };
   return (
     <form>
-      <div>
+      <div class="form1-item">
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -53,7 +55,7 @@ function LoginForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="password">Password:</label>
         <input
           type="password"

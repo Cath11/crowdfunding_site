@@ -26,9 +26,9 @@ function ProjectPage() {
           Authorization: `token ${token}`,
         },
       }
-    );
+      );
 
-    history.push("/");
+      history.push("/");
   };
   return (
     <div>

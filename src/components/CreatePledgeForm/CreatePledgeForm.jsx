@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import "./index.css";
 
 function CreatePledge() {
-  const { id } = useParams();
+  const {id} = useParams();
   const [credentials, setCredentials] = useState({
-    amount: "30",
+    amount: 30,
     comment: "good luck",
     anonymous: false,
-    project_id: id,
     supporter: "",
+    project_id: id
+    
   });
   const history = useHistory();
   const token = window.localStorage.getItem("token");
@@ -42,15 +44,15 @@ function CreatePledge() {
           // window.localStorage.setItem("token", response.token);
 
           history.push("/");
-        })
-        .catch((error) => {
-          alert("oh deary me you haven't completed the form");
-        });
+      })
+      .catch((error) => {
+        alert("oh deary me you haven't completed the form");
+    });
     }
   };
   return (
     <form>
-      <div>
+      <div class= "form1.item">
         <label htmlFor="amount">Amount:</label>
         <input
           type="text"
@@ -60,7 +62,7 @@ function CreatePledge() {
           value={credentials.amount}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="comment">Comment:</label>
         <input
           type="text"
@@ -70,7 +72,7 @@ function CreatePledge() {
           value={credentials.comment}
         />
       </div>
-      <div>
+      <div class="form1-item">
         <label htmlFor="anonymous">Stay Anonymous?:</label>
         <input
           type="anonymous"
@@ -80,7 +82,7 @@ function CreatePledge() {
           value={credentials.anonymous}
         />
       </div>
-      <div>
+      {/* <div class="form1-item">
         <label htmlFor="project_id">Project ID:</label>
         <input
           type="project_id"
@@ -89,7 +91,7 @@ function CreatePledge() {
           onChange={handleChange}
           value={credentials.project_id}
         />
-      </div>
+      </div> */}
       <div>
         <label htmlFor="supporter">Supporter:</label>
         <input
